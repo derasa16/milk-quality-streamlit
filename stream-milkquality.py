@@ -44,6 +44,8 @@ try:
     st.write("Model dan scaler berhasil dimuat")
 except FileNotFoundError as e:
     st.error(f"File tidak ditemukan: {e}")
+except ModuleNotFoundError as e:
+    st.error(f"Modul tidak ditemukan: {e}")
 except Exception as e:
     st.error(f"Kesalahan lain terjadi: {e}")
 
