@@ -1,12 +1,19 @@
 import pickle
 import numpy as np
 import streamlit as st
+import os
+
+st.write(os.listdir())  # Menampilkan file yang ada di direktori
 
 # Load saved model
-milkquality = pickle.load(open('milkquality_model.pkl', 'rb'))
-scaler = pickle.load(open('Scaler.pkl', 'rb'))
-# Assuming 'le' is a label encoder for categorical target variable if needed in predictions
-# le = pickle.load(open('le.pkl', 'rb')) 
+try:
+    milkquality = pickle.load(open('milkquality_model.pkl', 'rb'))
+    scaler = pickle.load(open('Scaler.pkl', 'rb'))
+    st.write("Model dan scaler berhasil dimuat")
+except FileNotFoundError as e:
+    st.write("File tidak ditemukan:", e)
+except Exception as e:
+    st.write("Kesalahan lain terjadi:", e) 
 
 # Title of the web app
 st.title("Prediksi Kualitas Susu dengan Decision Tree")
