@@ -41,7 +41,6 @@ with col1:
 try:
     milkquality = pickle.load(open('milkquality_model.pkl', 'rb'))
     scaler = pickle.load(open('Scaler.pkl', 'rb'))
-    st.write("Model dan scaler berhasil dimuat")
 except FileNotFoundError as e:
     st.error(f"File tidak ditemukan: {e}")
 except ModuleNotFoundError as e:
