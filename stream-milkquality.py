@@ -4,7 +4,7 @@ import streamlit as st
 import os
 
 # Title of the web app
-st.title("Prediksi Kualitas Susu dengan Decision Tree")
+st.title("Prediksi Kualitas Susu")
 
 # Input fields for user data
 col1, col2 = st.columns(2)
@@ -17,23 +17,23 @@ with col2:
     if Temprature != '':
         Temprature = float(Temprature)  # Convert to float
 with col1:
-    Taste = st.text_input("Taste")
+    Taste = st.text_input("Taste: 1=Baik (enak), 0=Buruk (tidak enak)")
     if Taste != '':
         Taste = float(Taste)  # Convert to float
 with col2:
-    Odor = st.text_input("Odor")
+    Odor = st.text_input("Odor Odor: 1=Baik (segar), 0=Buruk (amis,asam)")
     if Odor != '':
         Odor = float(Odor)  # Convert to float
 with col1:
-    Lemak = st.text_input("Fat")
+    Lemak = st.text_input("Fat: 1=Baik (lemak yang rendah), 0=Buruk (lemak yang tinggi)")
     if Lemak != '':
         Lemak = float(Lemak)  # Convert to float
 with col2:
-    Turbidity = st.text_input("Turbidity")
+    Turbidity = st.text_input("Turbidity Turbidity: 1=Baik(jernih), 0=Buruk(keruh)")
     if Turbidity != '':
         Turbidity = float(Turbidity)  # Convert to float
 with col1:
-    Colour = st.text_input("Color")
+    Colour = st.text_input("Color: 0 = Alice Blue, 1 = Ghost White, 2 = Honeydew, 3 = Oldlace,  4 = Snow, 5 = White, 6 = Whitesmoke, 7 = Wildsand, 8 = grey")
     if Colour != '':
         Colour = float(Colour)  # Convert to float
 
@@ -50,7 +50,7 @@ except Exception as e:
 
 # Prediction code
 Prediksi_Susu = ''
-if st.button("Prediksi Kualitas Susu SEKARANG"):
+if st.button("Prediksi Kualitas Susu"):
     if all(v is not None for v in [pH, Temprature, Taste, Odor, Lemak, Turbidity, Colour]):
         try:
             # Scaling numerical input features
