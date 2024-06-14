@@ -21,7 +21,7 @@ with col1:
     if Taste != '':
         Taste = float(Taste)  # Convert to float
 with col2:
-    Odor = st.text_input("Odor Odor: 1=Baik (segar), 0=Buruk (amis,asam)")
+    Odor = st.text_input("Odor: 1=Baik (segar), 0=Buruk (amis,asam)")
     if Odor != '':
         Odor = float(Odor)  # Convert to float
 with col1:
@@ -29,7 +29,7 @@ with col1:
     if Lemak != '':
         Lemak = float(Lemak)  # Convert to float
 with col2:
-    Turbidity = st.text_input("Turbidity Turbidity: 1=Baik(jernih), 0=Buruk(keruh)")
+    Turbidity = st.text_input("Turbidity: 1=Baik(jernih), 0=Buruk(keruh)")
     if Turbidity != '':
         Turbidity = float(Turbidity)  # Convert to float
 with col1:
